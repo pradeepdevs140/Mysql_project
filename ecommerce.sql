@@ -6,3 +6,4 @@ create table products( product_id int auto_increment primary key , name varchar(
 create table orders(order_id int auto_increment primary key , user_id int , foreign key(user_id) references users(user_id),total_amount decimal(10,2), order_date datetime default current_timestamp, status varchar(50) );
 create table order_items( order_item_id int auto_increment primary key , order_id int , foreign key(order_id) references orders(order_id) , product_id int , foreign key(product_id) references products(product_id) , quality int(100) , price decimal(10,2));
 create table payments(pay_id int auto_increment primary key , order_id int , foreign key(order_id) references orders(order_id), amount decimal(10,2), pay_date datetime default current_timestamp, status varchar(100), payment_mode varchar(50));
+create table sample(sample_id int auto_increment PRIMARY KEY, sample varchar(1000=));
